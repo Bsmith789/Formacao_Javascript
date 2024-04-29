@@ -11,10 +11,10 @@ const botoes = document.querySelectorAll('.app__card-button');
 const musicaFocoInput = document.querySelector('#alternar-musica');
 
 
-const musica = new Audio('/Fokus_Projeto2/Fokus-projeto-base/sounds/luna-rise-part-one.mp3');
-const audioIniciar = new Audio('/Fokus_Projeto2/Fokus-projeto-base/sounds/play.wav');
-const audioPausar = new Audio('/Fokus_Projeto2/Fokus-projeto-base/sounds/pause.mp3');
-const audioFinalizar = new Audio('/Fokus_Projeto2/Fokus-projeto-base/sounds/beep.mp3');
+const musica = new Audio('/Fokus_Projeto2/sounds/luna-rise-part-one.mp3');
+const audioIniciar = new Audio('/Fokus_Projeto2/sounds/play.wav');
+const audioPausar = new Audio('/Fokus_Projeto2/sounds/pause.mp3');
+const audioFinalizar = new Audio('/Fokus_Projeto2/sounds/beep.mp3');
 
 
 const imagemIniciarOuPausar = document.querySelector('.app__card-primary-butto-icon')
@@ -56,7 +56,7 @@ function alterarContexto(contexto) {
         contexto.classList.remove('active');
     })
     html.setAttribute('data-contexto', contexto);
-    banner.setAttribute('src', `/Fokus_Projeto2/Fokus-projeto-base/imagens/${contexto}.png`);
+    banner.setAttribute('src', `/Fokus_Projeto2/imagens/${contexto}.png`);
     switch (contexto) {
         case "foco":
             titulo.innerHTML = `
@@ -106,13 +106,13 @@ function iniciarOuPausar() {
     audioIniciar.play();
     intervaloId = setInterval(contagemRegressiva, 1000)
     iniciarOuPausarBt.textContent = "Pausar";
-    imagemIniciarOuPausar.setAttribute('src', "../Fokus-projeto-base/imagens/pause.png");
+    imagemIniciarOuPausar.setAttribute('src', "/Fokus_Projeto2/imagens/pause.png");
 }
 
 function zerar() {
     clearInterval(intervaloId);
     iniciarOuPausarBt.textContent = "Começar";
-    imagemIniciarOuPausar.setAttribute('src', "../Fokus-projeto-base/imagens/play_arrow.png");
+    imagemIniciarOuPausar.setAttribute('src', "/Fokus_Projeto2/imagens/play_arrow.png");
     intervaloId = null;
 }
 
